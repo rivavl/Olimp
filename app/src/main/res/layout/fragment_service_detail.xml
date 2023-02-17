@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/detail_margin">
+
+    <ImageView
+        android:id="@+id/iv_service_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/detail_description_margin_top"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tv_service_name"
+        style="@style/Text.Black.24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_name_margin_top"
+        android:gravity="center"
+        tools:text="Почта" />
+
+    <TextView
+        android:id="@+id/tv_service_description"
+        style="@style/Text.Black.20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_description_margin_top"
+        tools:text="Онлайн-платформа для обучения и образовательных коммуникаций" />
+
+    <TextView
+        android:id="@+id/tv_service_link"
+        style="@style/Text.Blue.20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_link_margin_top"
+        tools:text="https://gb.ru/" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <include
+        android:id="@+id/error_group"
+        layout="@layout/error_layout" />
+
+</LinearLayout>

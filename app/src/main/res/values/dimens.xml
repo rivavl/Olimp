@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="service_item_margin">8dp</dimen>
+    <dimen name="recycler_view_horizontal_margin">12dp</dimen>
+    <dimen name="recycler_view_top_margin">8dp</dimen>
+    <dimen name="detail_name_margin_top">20dp</dimen>
+    <dimen name="detail_margin">12dp</dimen>
+    <dimen name="detail_description_margin_top">30dp</dimen>
+    <dimen name="detail_link_margin_top">20dp</dimen>
+</resources>
