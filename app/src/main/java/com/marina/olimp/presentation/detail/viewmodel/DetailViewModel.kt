@@ -3,9 +3,7 @@ package com.marina.olimp.presentation.detail.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.marina.olimp.presentation.entity.ServiceUI
-import kotlinx.coroutines.launch
 
 class DetailViewModel : ViewModel() {
 
@@ -13,8 +11,6 @@ class DetailViewModel : ViewModel() {
     val state: LiveData<DetailUiState> get() = _state
 
     fun saveData(item: ServiceUI) {
-        viewModelScope.launch {
-
-        }
+        _state.value = DetailUiState.Content(item)
     }
 }
