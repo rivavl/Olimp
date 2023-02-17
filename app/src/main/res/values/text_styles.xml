@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text" parent="TextAppearance.AppCompat" />
+
+    <style name="Text.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Black.24sp">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text.Black.20sp">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="Text.Blue.20sp">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

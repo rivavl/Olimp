@@ -1,7 +1,8 @@
-package com.marina.olimp
+package com.marina.olimp.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.marina.olimp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
