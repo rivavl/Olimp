@@ -1,5 +1,7 @@
 package com.marina.olimp.presentation.detail.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -33,6 +35,10 @@ class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailV
         viewModel.saveData(item)
         binding.errorGroup1.btnTryAgain.setOnClickListener {
             viewModel.saveData(item)
+        }
+        binding.tvServiceLink.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.serviceLink))
+            startActivity(intent)
         }
     }
 
