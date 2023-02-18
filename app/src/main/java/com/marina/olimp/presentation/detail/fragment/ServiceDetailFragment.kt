@@ -3,7 +3,9 @@ package com.marina.olimp.presentation.detail.fragment
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import com.marina.olimp.app.App
 import com.marina.olimp.databinding.FragmentServiceDetailBinding
+import com.marina.olimp.di.AppContainer
 import com.marina.olimp.presentation.base.BaseFragment
 import com.marina.olimp.presentation.detail.viewmodel.DetailUiState
 import com.marina.olimp.presentation.detail.viewmodel.DetailViewModel
@@ -13,7 +15,14 @@ import com.marina.olimp.presentation.util.load
 class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailViewModel>(
     FragmentServiceDetailBinding::inflate
 ) {
-    override val viewModel: DetailViewModel by viewModels { TODO() }
+
+    override val container: AppContainer by lazy {
+        (requireActivity().application as App).container
+    }
+
+    override val viewModel: DetailViewModel by lazy {
+        container.detailViewModel
+    }
 
     private val item by lazy {
         val args = requireArguments()
@@ -22,7 +31,7 @@ class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailV
 
     override fun initView() {
         viewModel.saveData(item)
-        binding.errorGroup.btnTryAgain.setOnClickListener {
+        binding.errorGroup1.btnTryAgain.setOnClickListener {
             viewModel.saveData(item)
         }
     }
@@ -46,8 +55,8 @@ class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailV
         tvServiceName.isVisible = false
         tvServiceDescription.isVisible = false
         tvServiceLink.isVisible = false
-        errorGroup.btnTryAgain.isVisible = false
-        errorGroup.tvError.isVisible = false
+        errorGroup1.btnTryAgain.isVisible = false
+        errorGroup1.tvError.isVisible = false
     }
 
     private fun showContent(data: ServiceUI) = with(binding) {
@@ -65,8 +74,8 @@ class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailV
         tvServiceLink.isVisible = true
         tvServiceLink.text = data.serviceLink
 
-        errorGroup.btnTryAgain.isVisible = false
-        errorGroup.tvError.isVisible = false
+        errorGroup1.btnTryAgain.isVisible = false
+        errorGroup1.tvError.isVisible = false
     }
 
     private fun showError() = with(binding) {
@@ -75,8 +84,8 @@ class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailV
         tvServiceName.isVisible = false
         tvServiceDescription.isVisible = false
         tvServiceLink.isVisible = false
-        errorGroup.btnTryAgain.isVisible = true
-        errorGroup.tvError.isVisible = true
+        errorGroup1.btnTryAgain.isVisible = true
+        errorGroup1.tvError.isVisible = true
     }
 
     companion object {

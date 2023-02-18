@@ -1,11 +1,13 @@
 package com.marina.olimp.presentation.list
 
 import android.view.LayoutInflater
+import android.view.MotionEvent.ACTION_HOVER_ENTER
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.marina.olimp.R
 import com.marina.olimp.databinding.ServiceItemBinding
 import com.marina.olimp.presentation.entity.ServiceUI
 import com.marina.olimp.presentation.util.load
@@ -47,7 +49,6 @@ class ServiceAdapter :
         override fun areContentsTheSame(oldItem: ServiceUI, newItem: ServiceUI): Boolean {
             return oldItem == newItem
         }
-
     }
 
     override fun onViewDetachedFromWindow(holder: ServiceViewHolder) {

@@ -25,8 +25,8 @@ class ListViewModel(
         viewModelScope.launch {
             _state.value = ListUiState.Loading
             try {
-                val characters = useCase().map { converter.convert(it) }
-                _state.value = ListUiState.Content(characters)
+                val services = useCase().map { converter.convert(it) }
+                _state.value = ListUiState.Content(services)
             } catch (rethrow: CancellationException) {
                 throw rethrow
             } catch (ex: Exception) {

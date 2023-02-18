@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import com.marina.olimp.di.AppContainer
 
 abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
     private val bindingFactory: (LayoutInflater) -> VB
@@ -14,6 +15,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
 
     private var _binding: VB? = null
     protected val binding: VB get() = _binding!!
+
+    abstract val container: AppContainer
 
     abstract val viewModel: ViewModel
 
