@@ -12,7 +12,7 @@ class ServiceRepositoryImpl(
     override suspend fun getAll(): List<Service> {
         val response = api.getServices()
         if (response.isSuccessful) {
-            return response.body()?.map { mapper.convert(it) }!!
+            return response.body()?.items?.map { mapper.convert(it) }!!
         } else {
             throw Exception()
         }
