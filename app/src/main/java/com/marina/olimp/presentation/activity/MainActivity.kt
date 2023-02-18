@@ -7,10 +7,12 @@ import com.marina.olimp.presentation.detail.fragment.ServiceDetailFragment
 import com.marina.olimp.presentation.entity.ServiceUI
 import com.marina.olimp.presentation.list.fragment.ServiceListFragment
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        title = "Services"
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container_view, ServiceListFragment.newInstance())
             .commit()

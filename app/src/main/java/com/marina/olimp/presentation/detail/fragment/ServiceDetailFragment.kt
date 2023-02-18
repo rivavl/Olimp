@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import com.marina.olimp.app.App
 import com.marina.olimp.databinding.FragmentServiceDetailBinding
 import com.marina.olimp.di.AppContainer
@@ -40,6 +39,7 @@ class ServiceDetailFragment : BaseFragment<FragmentServiceDetailBinding, DetailV
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.serviceLink))
             startActivity(intent)
         }
+        requireActivity().title = item.name
     }
 
     override fun observeData() {
